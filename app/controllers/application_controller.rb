@@ -70,7 +70,11 @@ class ApplicationController < Sinatra::Base
   end
   
   post "/withdrawal" do
-    
+    user = User.find(session[:user_id])
+    if user.balance >= params[:amount].to_f
+      user.balance -= params[:amount].to_f
+    end
+    redirect "/account"
   end
   
   helpers do
