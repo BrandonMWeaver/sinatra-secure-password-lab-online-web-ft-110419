@@ -58,7 +58,7 @@ class ApplicationController < Sinatra::Base
     erb :deposit
   end
   
-  patch "/deposit" do
+  post "/deposit" do
     user = User.find(session[:user_id])
     user.balance += params[:amount].to_f
     user.save
