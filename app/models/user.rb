@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   
   has_secure_password
-  attr_reader :balance
+  attr_accessor :balance
   @balance = 0
   
   def deposit(amount)
