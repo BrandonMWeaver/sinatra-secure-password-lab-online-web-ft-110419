@@ -73,6 +73,7 @@ class ApplicationController < Sinatra::Base
     user = User.find(session[:user_id])
     if user.balance >= params[:amount].to_f
       user.balance -= params[:amount].to_f
+      user.save
     end
     redirect "/account"
   end
