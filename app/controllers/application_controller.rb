@@ -59,7 +59,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get "/withdrawal" do
-    
+    erb :withdrawal
   end
   
   post "/deposit" do
