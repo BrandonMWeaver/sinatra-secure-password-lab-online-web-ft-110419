@@ -69,6 +69,10 @@ class ApplicationController < Sinatra::Base
     redirect "/account"
   end
   
+  post "/withdrawal" do
+    
+  end
+  
   helpers do
     def logged_in?
       !!session[:user_id]
