@@ -59,6 +59,7 @@ class ApplicationController < Sinatra::Base
   
   post "/deposit" do
     current_user.balance += params[:amount].to_f
+    current_user.save
     redirect "/account"
   end
   
